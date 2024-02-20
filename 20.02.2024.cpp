@@ -1,7 +1,7 @@
 class Solution
 {
 public:
-    bool solve(string A, unordered_map<string,int>&mp, int ind){
+bool solve(string A, unordered_map<string,int>&mp, int ind){
         if(ind>=A.length()){
             return true;
         }
@@ -18,7 +18,7 @@ public:
     }
     
     
-    int wordBreak(string A, vector<string> &B) {
+    int func(string A, vector<string> &B) {
         //code here
         unordered_map<string,int>mp;
         for(int i=0;i<B.size();i++){
@@ -31,5 +31,9 @@ public:
         else{
             return false;
         }
+    }
+    int wordBreak(int n, string s, vector<string> &dictionary) {
+        //code here
+        return func(s, dictionary);
     }
 };
