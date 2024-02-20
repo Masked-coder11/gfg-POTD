@@ -1,8 +1,3 @@
-//User function template for C++
-
-// A : given string to search
-// B : vector of available strings
-
 class Solution
 {
 public:
