@@ -3,16 +3,25 @@ class Solution
     public:
     
     Node* merge(Node *head1, Node* head2){
-        if(!head1) return head2;
-        if(!head2) return head1;
-        
-        Node* temp=head1;
-        while(temp->next){
-            temp=temp->next;
-        }
-        temp->next=head2;
-        
-        return head1;
+        if (!head1) return head2;  // base cases
+    	if (!head2) return head1;  // base cases
+    	
+    	Node *temp = NULL;
+    	
+    	if (head1->data < head2->data)
+    	{
+    		temp = head1;     // picking the lower value
+    		head1->next = mergelist(head1->next, head2);
+    		// recursively merging the remaining list
+    	}
+    	else
+    	{
+    		temp = head2;     // picking the lower value
+    		head2->next = mergelist(head1, head2->next);
+    		// recursively merging the remaining list
+    	}
+    	return temp;
+
     }
     
     void reverse(Node *&head){
