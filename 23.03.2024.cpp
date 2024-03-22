@@ -1,4 +1,4 @@
-lass Solution {
+class Solution {
   public:
     vector<int> Series(int n) {
         // Code here
