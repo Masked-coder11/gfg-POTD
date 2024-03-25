@@ -11,13 +11,13 @@ class Solution
     	if (head1->data < head2->data)
     	{
     		temp = head1;     // picking the lower value
-    		head1->next = mergelist(head1->next, head2);
+    		head1->next = merge(head1->next, head2);
     		// recursively merging the remaining list
     	}
     	else
     	{
     		temp = head2;     // picking the lower value
-    		head2->next = mergelist(head1, head2->next);
+    		head2->next = merge(head1, head2->next);
     		// recursively merging the remaining list
     	}
     	return temp;
