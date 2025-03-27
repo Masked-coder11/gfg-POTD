@@ -1,0 +1,19 @@
+class Solution {
+  public:
+    // Function returns the second
+    // largest elements
+    int getSecondLargest(vector<int> &arr) {
+        // Code Here
+        int sl=-1, l=-1;
+        for(auto x: arr){
+            if(x > l){
+                sl=l;
+                l=x;
+            }
+            else if(x<l && sl<x){
+                sl=x;
+            }
+        }
+        return sl;
+    }
+};
